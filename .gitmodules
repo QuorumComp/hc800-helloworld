@@ -1,0 +1,8 @@
+[submodule "libs/stdlib"]
+	path = libs/stdlib
+	url = https://github.com/QuorumComp/hc800-stdlib.git
+	branch = main
+[submodule "libs/lowlevel"]
+	path = libs/lowlevel
+	url = https://github.com/QuorumComp/hc800-lowlevel.git
+	branch = main
