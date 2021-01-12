@@ -43,7 +43,19 @@ clean : $(CLEAN)
 %.clean:
 	@$(MAKE) -C $* clean
 
-$(LIBS):
+# Make subdirs
+
+SUBDIRS = $(dir $(LIBS))
+
+subdirs: $(SUBDIRS)
+
+.PHONY: subdirs $(SUBDIRS)
+
+$(LIBS): subdirs
+
+$(SUBDIRS):
 	@$(MAKE) -C $(@D)
+
+# Include dependency info
 
 include $(wildcard $(patsubst %,$(DEPDIR)/%.d,$(basename $(notdir $(SRCS)))))
